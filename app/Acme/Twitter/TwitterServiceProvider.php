@@ -1,0 +1,30 @@
+<?php namespace Acme\Twitter;
+
+use Guzzle\Plugin\Oauth\OauthPlugin;
+use Guzzle\Service\Client;
+use Illuminate\Support\ServiceProvider;
+use Config;
+
+class TwitterServiceProvider extends ServiceProvider {
+
+    public function register()
+    {
+        $this->app->bind('twitter', function()
+        {
+            $client = new Client('https://api.twitter.com/1.1search/tweets.json?q=');
+            $auth = new OauthPlugin([
+
+                'consumer_key'       => Config::get('twitter.consumer_key'),
+                'consumer_secret'    => Config::get('twitter.consumer_secret'),
+                'token'              => Config::get('twitter.token'),
+                'token_secret'       => Config::get('twitter.token_secret')
+
+            ]);
+
+            $client->addSubscriber($auth);
+
+            return new TwitterAPI($client);
+        });
+
+    }
+}
