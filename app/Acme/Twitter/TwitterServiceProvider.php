@@ -11,7 +11,7 @@ class TwitterServiceProvider extends ServiceProvider {
     {
         $this->app->bind('twitter', function()
         {
-            $client = new Client('https://api.twitter.com/1.1search/tweets.json?q=');
+            $client = new Client('https://api.twitter.com/1.1');
             $auth = new OauthPlugin([
 
                 'consumer_key'       => Config::get('twitter.consumer_key'),
