@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
-        'Acme\Twitter\TwitterServiceProvider'
+        'Acme\Twitter\TwitterServiceProvider',
+        'Thujohn\Twitter\TwitterServiceProvider',
 
 	),
 
@@ -190,7 +191,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-        'Twitter'           => 'Acme\Twitter\Twitter'
+        'Twitter'           => 'Acme\Twitter\Twitter',
+        'TwitterThu'           => 'Thujohn\Twitter\TwitterFacade',
 
 	),
 

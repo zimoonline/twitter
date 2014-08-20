@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"guzzle/guzzle": "dev-master",
-		"way/generators": "dev-master"
+		"way/generators": "dev-master",
+		"thujohn/twitter": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

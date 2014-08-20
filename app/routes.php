@@ -5,11 +5,14 @@ Route::get('/{query}', function($query)
 {
 
     return Twitter::search($query);
-//    $array = json_decode($tweets);
-//
-//    return View::make('home', compact('array'));
+
+    View::make('home', compact('tweets'));
 //    return App::make('twitter')->search($query);
+});
 
 
-
+Route::get('/test/{query}', function($query)
+{
+    $tweets = TwitterThu::getSearch(array('q' => $query, 'count' => 100, 'format' => 'array'));
+    return View::make('home', compact('tweets'));
 });

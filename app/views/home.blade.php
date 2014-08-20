@@ -8,8 +8,12 @@
 <body>
 <div class="welcome">
 
-    @foreach($array as $a)
-        <ul>{{ $a }}</ul>
+    @foreach($tweets['statuses'] as $tweet)
+        <ul>
+            <li>{{ TwitterThu::linkify($tweet['text']) }}</li>
+            <li>{{ TwitterThu::ago($tweet['created_at']) }}</li>
+        </ul>
+
     @endforeach
 
 </div>
