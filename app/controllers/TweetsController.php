@@ -2,14 +2,16 @@
 
 class TweetsController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /tweets
-	 *
-	 * @return Response
-	 */
+    /**
+     * Display a listing of the resource.
+     * GET /tweets
+     *
+     * @param $query
+     * @return Response
+     */
 	public function index($query)
 	{
+
         $tweets = TwitterThu::getSearch(array('q' => $query, 'count' => 100, 'format' => 'array'));
 
         return View::make('tweets.index', compact('tweets', 'query'));
